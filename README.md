@@ -1,5 +1,14 @@
 # Simple Doubly Linked Lists for the Motorola 68000
 
+Work in progress!
+
+This is a fork that adds two variations on this linked list implementation, both based on the word list version:
+
+- The Shared Linked List allows multiple linked lists to share the same space in RAM. This is done by splitting off the parent header, which manages space usage, with the child header, which manages nodes.
+- The Manager Linked List adds functionality to the linked list which allows each node to keep track of a block of RAM. Use cases for this include allowing object systems to allocate a variable amounts of RAM and creating a VRAM manager. Defragmentation is still a work in progress.
+
+Original README below:
+
 Title says it all: this implements a basic doubly linked list system for the Motorola 68000.
 
 ## How To Use
