@@ -15,24 +15,24 @@
 ; ------------------------------------------------------------------------------
 
 ; ------------------------------------------------------------------------------
-; List header structure
+; Parent header structure
 ; ------------------------------------------------------------------------------
 
-wlist.head		equ 0					; List head
-wlist.tail		equ 2					; List tail
-wlist.freed		equ 4					; Freed nodes tail
-wlist.node_size		equ 6					; Size of node
-wlist.cursor		equ 8					; List cursor
-wlist.end		equ $A					; End of list
-wlist.struct_len	equ $C					; Length of structure
+shlist.head		equ 0					; List head
+shlist.freed		equ 2					; Freed nodes tail
+shlist.node_size	equ 4					; Size of node
+shlist.cursor		equ 6					; List cursor
+shlist.start		equ 8					; Start of list
+shlist.end		equ $A					; End of list
+shlist.child		equ $C					; Number of child lists
+shlist.struct_len	equ $E					; Length of structure
 
 ; ------------------------------------------------------------------------------
-; List node header structure
+; Child header structure
 ; ------------------------------------------------------------------------------
 
-wnode.next		equ 0					; Next node
-wnode.previous		equ 2					; Previous node
-wnode.list		equ 4					; List the node is part of
-wnode.struct_len	equ 6					; Length of structure
+chlist.head		equ 0					; List head
+chlist.tails		equ 2					; List tail
+chlist.struct_len	equ 4					; Length of structure
 
 ; ------------------------------------------------------------------------------

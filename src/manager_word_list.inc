@@ -15,24 +15,29 @@
 ; ------------------------------------------------------------------------------
 
 ; ------------------------------------------------------------------------------
-; List header structure
+; Manager list header structure
 ; ------------------------------------------------------------------------------
 
-wlist.head		equ 0					; List head
-wlist.tail		equ 2					; List tail
-wlist.freed		equ 4					; Freed nodes tail
-wlist.node_size		equ 6					; Size of node
-wlist.cursor		equ 8					; List cursor
-wlist.end		equ $A					; End of list
-wlist.struct_len	equ $C					; Length of structure
+malist.head		equ 0					; List head
+malist.tail		equ 2					; List tail
+malist.freed		equ 4					; Freed nodes tail
+malist.node_size	equ 6					; Size of node
+malist.cursor		equ 8					; List cursor
+malist.end		equ $A					; End of list
+malist.chhead		equ $C					; Beginning location of the child list
+malist.chlen		equ $E					; Child list length
+malist.struct_len	equ $10					; Length of structure
 
 ; ------------------------------------------------------------------------------
-; List node header structure
+; Manager list node header structure
 ; ------------------------------------------------------------------------------
 
-wnode.next		equ 0					; Next node
-wnode.previous		equ 2					; Previous node
-wnode.list		equ 4					; List the node is part of
-wnode.struct_len	equ 6					; Length of structure
+manode.next		equ 0					; Next node
+manode.previous		equ 2					; Previous node
+manode.list		equ 4					; List the node is part of
+manode.child		equ 6					; Location of child
+manode.childsize	equ 8					; Amount of space allocated for this child
+manode.childfree	equ $A					; Total amount of space between this child and the next
+manode.struct_len	equ $C					; Length of structure
 
 ; ------------------------------------------------------------------------------
